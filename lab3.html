@@ -129,15 +129,106 @@
 	</section>
 	<!-- /container -->
 
-	<section id="projekt1">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Jeszcze brak zawartości</h1>
+<section id="projekt1">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Lab 3</h1>
+
+            <p id="dialog"><span class="pq">Bo Paryż częstą mody odmianą się chlubi, A co Francuz wymyśli,to Polak polubi</span>.</p>
+
+            <p><span>Dopóki wiara kwitła, szanowano prawa, Była wolność z porządkiem i z dostatkiem sława.</span></p>
+
+            <p><span>I ja tam z gośćmi byłem, miód i wino piłem, A com widział i słyszał, w księgi umieściłem.</span></p>
+
+            <p><span class="pq">Miasto Gdańsk, niegdyś nasze, będzie znowu nasze!</span></p>
+
+        </div>
+    </div>
+</section>
+
+<section id="projekt3">
+    <div class="container">
+        <div class="jumbotron">
 
 
-			</div>
-		</div>
-	</section>
+            <div class="odn">
+
+                <p class="p_odn">Najedź myszką na ten odnośnik i zobacz co się stanie</p>
+
+                <p class="p_odn"> Albo na ten</p>
+
+                <p class="p_odn">Lub ten</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="projekt4">
+    <div class="container">
+        <div class="jumbotron">
+
+            <h3>Formularz: </h3>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+            </form>
+      
+            <button class="btn btn-success" id="mojbtn">Kliknij mnie :)</button>
+            <br><br>
+            
+            <div class="container butonowy"> 
+            
+            <div id="dzialanie"></div>
+            
+            
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn1">Przycisk 1</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn2">Przycisk 2</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn3">Przycisk 3</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn4">Przycisk 4</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn5">Przycisk 5</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn6">Przycisk 6</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn7">Przycisk 7</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn8">Przycisk 8</button>
+            </div>
+               <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn9">Przycisk 9</button>
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-danger" id="btn10">Przycisk 10</button>
+            </div>
+            </div>
+     
+
+
+
+        </div>
+    </div>
+</section>
 
 
 	<footer>
@@ -267,17 +358,115 @@
 		</div>
 	</div>
     
-    	<!-- odwołania do moich plików js
-    ================================================== -->
-    
-    <script src="js/moje/projekt2.js"></script>
-
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/ie10-viewport-bug-workaround.js"></script>
 	<script src="js/forms.js"></script>
+    
+    
+    <!-- Moj skrypt do lab 3
+    ================================================== -->
+    <script>
+$(document).ready(function(){
+    $('span.pq').each(function(){
+        let quote=$(this).clone();
+        quote.removeClass('pq');
+        quote.addClass('pullquote');
+        $(this).before(quote);
+    }); // koniec funkcji each
+    
+    
+    // zdarzenia
+ $('body').dblclick(function() { 
+     alert("Proszę tak nie klikać!"); 
+ });
+    
+    let message ="<p>Hej! Najechałeś na odnośnik :)<p>";
+    
+// funkcja dodaje akapity z textem    
+$(".p_odn").mouseover(function(){
+    
+    $(".odn").append(message);
+    });
+    
+    
+// funkcja zmiania text buttona mojbtn po jego naciśnięciu    
+$("#mojbtn").click(function(){
+    $(this).text("zostałem kliknięty");
+});
+    
+// zmiana styli przez klikanie w buttony
+    
+    $("#btn1").click(function(){
+        $(this).text("1 kliknięty");
+        $("p").css("background-color", "pink");
+        $("#dzialanie").append("<p>1-Nadałem różowe tło wszystkim paragrafom.</p>");
+    });
+    
+    $("#btn2").click(function(){
+        $(this).text("2 kliknięty");
+        $("h1").css("font-family", "Impact");
+        $("#dzialanie").append("<p>2-Zmieniłem czcionkę nagłówków h1 na Impact.</p>");
+    });
+    
+    $("#btn3").click(function(){
+        $(this).text("3 kliknięty");
+        $("h1").css("color", "green");
+        $("#dzialanie").append("<p>3-Pokolorowałem nagłówki h1 na zielono</p>");
+    });
+    
+        $("#btn4").click(function(){
+        $(this).text("4 kliknięty");
+        $("p").css("display", "none");
+        $("#dzialanie").append("<p>4-Ukryłem wszystkie paragrafy</p>");
+    });
+    
+        $("#btn5").click(function(){
+            $(this).text("5 kliknięty");
+            $("h1").css("display", "none");
+            $("#dzialanie").append("<p>5-Ukryłem wszystkie nagłówki</p>");
+    });
+    
+        $("#btn6").click(function(){
+            $(this).text("6 kliknięty");
+            $("p").css("display", "block");
+            $("#dzialanie").append("<p>6-Odkryłem ukryte paragrafy</p>");
+    });
+    
+        $("#btn7").click(function(){
+            $(this).text("7 kliknięty");
+            $("body").css("background-color", "#8eebe9");
+            $("#dzialanie").append("<p>7-Zrobiłem ładne tło</p>");
+    });
+    
+        $("#btn8").click(function(){
+            $(this).text("8 kliknięty");
+            $("p").css("font-size", "xx-large");
+            $("#dzialanie").append("<p>8-Wszystkie paragrafy powiększyły się do rozmiaru xx-large</p>");
+    });
+    
+           $("#btn9").click(function(){
+            $(this).text("9 kliknięty");
+            $(".butonowy").find("#btn10").addClass("btn_magic");
+            $("#dzialanie").append("<p>9-Robię krzywe buttony</p>");
+    });
+    
+           $("#btn10").click(function(){
+            $(this).text("10 kliknięty");
+            $("div").addClass("magic");
+            $("#dzialanie").append("<p>10 Dodaję efekt do divów po najechaniu</p>");
+    });
+    
+    
+        
+        
+        
+                
+}); // koniec funkcji ready
+</script>
+    
 	
 </body>
 
