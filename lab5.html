@@ -24,6 +24,11 @@
 <script src="js/jquery.easing.1.3.min.js"></script>
 <script src="js/jquery.easing.compatibility.js"></script>
 <script src="js/jquery.color-2.1.2.js"></script>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jque
+ry.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquer
+y.fancybox.min.js"></script>
 
 
 </head>
@@ -79,13 +84,19 @@
 
 	</nav>
     
+    <a data-fancybox="gallery" href="img/large/blue.jpg" rel="gallery"
+title="BLUE">
+
+</a>
+    
+    
 <div id="dashboard">
-    <img src="img/small/blue.jpg" width="70" height="70" alt="blue">
-    <img src="img/small/green.jpg" width="70" height="70" alt="green">
-    <img src="img/small/orange.jpg" width="70" height="70" alt="orange">
-    <img src="img/small/purple.jpg" width="70" height="70" alt="purple">
-    <img src="img/small/red.jpg" width="70" height="70" alt="red">
-    <img src="img/small/yellow.jpg" width="70" height="70" alt="yellow">
+    <a data-fancybox="gallery" href="img/large/blue.jpg" rel="gallery" title="BLUE"><img src="img/small/blue.jpg" width="70" height="70" alt="blue"></a>
+    <a data-fancybox="gallery" href="img/large/green.jpg" rel="gallery" title="GREEN"><img src="img/small/green.jpg" width="70" height="70" alt="green"></a>
+    <a data-fancybox="gallery" href="img/large/orange.jpg" rel="gallery" title="ORANGE"> <img src="img/small/orange.jpg" width="70" height="70" alt="orange"></a>
+    <a data-fancybox="gallery" href="img/large/purple.jpg" rel="gallery" title="PURPLE"><img src="img/small/purple.jpg" width="70" height="70" alt="purple"></a>
+    <a data-fancybox="gallery" href="img/large/red.jpg" rel="gallery" title="RED"> <img src="img/small/red.jpg" width="70" height="70" alt="red"></a>
+    <a data-fancybox="gallery" href="img/large/yellow.jpg" rel="gallery" title="YELLOW"> <img src="img/small/yellow.jpg" width="70" height="70" alt="yellow"></a>
 </div>
 
 	<!-- Main container -->
@@ -305,14 +316,14 @@
 $('#dashboard img').each(function() {
 
     let imgFile = $(this).attr('src');
-    let preloagImage = new Image();
+    let preloadImage = new Image();
     let imgExt = /(\.\w{3,4}$)/;
     
-    preloagImage.src=imgFile.replace(imgExt,'_h$1');
+    preloadImage.src=imgFile.replace(imgExt,'_h$1');
     
     $(this).hover(
         function() {
-            $(this).attr('src',preloagImage.src);
+            $(this).attr('src',preloadImage.src);
         },
         function () {
             $(this).attr('src',imgFile);
