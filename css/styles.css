@@ -60,6 +60,19 @@
   transform-origin: 20% 40%;
 }
 
+#dashboard {
+width: 112px;
+background-color: rgb(110,138,195);
+padding: 20px 20px 0 20px;
+position: absolute;
+left: -92px;
+z-index: 100;
+}
+#dashboard img {
+margin-bottom: 20px;
+border: 1px solid rgb(0,0,0);
+}
+
 
 
 
